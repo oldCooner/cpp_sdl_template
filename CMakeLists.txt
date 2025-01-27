@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
@@ -9,6 +9,7 @@ project( ${PROJECT_NAME} VERSION 1.0)
 
 ### Dependencies
 add_subdirectory(libs/SDL3 EXCLUDE_FROM_ALL)
+add_subdirectory(libs/SDL3_image EXCLUDE_FROM_ALL)
 
 include_directories("game"
                     )
@@ -21,4 +22,4 @@ set(SOURCE_FILES
 
 add_executable( ${OUTPUT_NAME} ${SOURCE_FILES} )
 target_compile_options( ${OUTPUT_NAME} PRIVATE -Wall -Werror )
-target_link_libraries(${OUTPUT_NAME} PRIVATE SDL3::SDL3)
+target_link_libraries(${OUTPUT_NAME} PRIVATE SDL3_image::SDL3_image SDL3::SDL3)
