@@ -4,15 +4,22 @@ bool Game::init()
 {
     if( SDL_CreateWindowAndRenderer( "cpp_sdl_template", 0, 0, SDL_WINDOW_FULLSCREEN, &pGameWindow, &pGameRenderer ) )
     {
-        SDL_SetRenderDrawColor( pGameRenderer, 0, 0, 0, 255 );
+        if( TTF_Init() )
+        {
+            SDL_SetRenderDrawColor( pGameRenderer, 0, 0, 0, 255 );
 
-        //SDL_GetRenderOutputSize( pGameRenderer, &iWindowWidth, &iWindowHeight );
-        SDL_SyncWindow( pGameWindow );
-        SDL_GetWindowSize( pGameWindow, &iWindowWidth, &iWindowHeight );
+            //SDL_GetRenderOutputSize( pGameRenderer, &iWindowWidth, &iWindowHeight );
+            SDL_SyncWindow( pGameWindow );
+            SDL_GetWindowSize( pGameWindow, &iWindowWidth, &iWindowHeight );
 
-        /*
-            LOAD ALL TEXTURES HERE
-        */
+            /*
+                LOAD ALL TEXTURES HERE
+            */
+        } else
+        {
+            std::cerr << "Failed to intialize ttf module! SDL_Error: " << SDL_GetError() << "\n";
+            return 0;
+        }
     } else
     {
         std::cerr << "Failed to create window and renderer! SDL_Error: " << SDL_GetError() << "\n";
