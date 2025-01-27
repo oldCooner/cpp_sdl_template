@@ -1,8 +1,12 @@
-#include <stdio.h>
+#include "Game.h"
 
 int main(int argc, char **argv)
 {
-    printf("Hello World!\n");
+    Game game;
+
+    game.init();
+    game.run();
+    game.close();
 
     return 0;
 }
