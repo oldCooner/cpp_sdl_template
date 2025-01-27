@@ -8,7 +8,6 @@ bool Game::init()
         {
             SDL_SetRenderDrawColor( pGameRenderer, 0, 0, 0, 255 );
 
-            //SDL_GetRenderOutputSize( pGameRenderer, &iWindowWidth, &iWindowHeight );
             SDL_SyncWindow( pGameWindow );
             SDL_GetWindowSize( pGameWindow, &iWindowWidth, &iWindowHeight );
 
