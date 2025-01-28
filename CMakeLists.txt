@@ -9,8 +9,8 @@ project( ${PROJECT_NAME} VERSION 1.0)
 
 ### Setup output dir
 ### required for ttf librariesd
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/build")
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/build")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/libs")
 
 ### Dependencies
 add_subdirectory(libs/SDL3 EXCLUDE_FROM_ALL)
