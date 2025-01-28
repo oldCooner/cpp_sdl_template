@@ -10,7 +10,7 @@ Install your project with cmake
 
 ### Linux and MACOS
 ```bash
-  git clone --recursive git@github.com:AndreMellis/cpp_sdl_template.git
+  git clone --recursive <your git repo>
   cd cpp_sdl_template
   mkdir build
   cd build
